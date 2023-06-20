@@ -1,21 +1,12 @@
-import numpy as np
-matriz=np.arange(1,101).reshape(10,10);
-print(matriz);
-'''
-def num_asiento():
+def comprar_entradas(matriz,contador_entradas):
     fila=int(input("Fila del asiento:\n"));
     columna=int(input("Columna del asiento:\n"));
-    for i in range(fila):
-        for j in range(columna):
-            asiento_seleccionado=matriz[i,j];
-    print(asiento_seleccionado);
-
-matriz_vacia=np.empty((10,10),dtype=object);
-print(type(matriz_vacia));
-asiento=0;
-for fila in range(10):
-    for columna in range(10):
-        asiento=asiento+1;
-        matriz_vacia[fila,columna]=asiento;
-
-print(type(matriz_vacia));'''
+    asiento=matriz[fila,columna];
+    matriz[fila,columna]='X';
+    print(f"Usted ha elegido el asiento {asiento}");
+    contador_entradas=contador_entradas+1
+    #print(matriz);
+    nombre=input("Ingrese su nombre\n");
+    rut=int(input("Ingrese su rut sin puntos ni guion:\n"));
+    return matriz,contador_entradas
+    return asiento
